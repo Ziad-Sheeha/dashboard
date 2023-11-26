@@ -1,0 +1,20 @@
+<div style="height: 288px" class="card my-4 my-md-0">
+  <div class="chart-header p-4 d-flex justify-content-between">
+    <div class="drop-down">
+      <button
+        class="btn bg-white box-shadow dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        سنويا
+      </button>
+    </div>
+    <div class="chart-text text-end">
+      <p>إحصائيات إستخدام القسيمة</p>
+      <i class="pi pi-angle-down"></i> &nbsp;
+      <span class="text-secondary">05 يوليو , 2023 - 05 أغسطس , 2023</span>
+    </div>
+  </div>
+  <p-chart height="170" type="line" [data]="data" [options]="options"></p-chart>
+</div>

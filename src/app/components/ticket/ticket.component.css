@@ -1,0 +1,53 @@
+.ticket {
+  position: relative;
+  font-weight: 500;
+  border-radius: 12.47px;
+  background-image: url(../../../assets/imgs/ticket-background.svg);
+  background-size: cover;
+}
+
+.ticket::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 50%;
+  left: -20px;
+  background-color: #f3f5f7;
+}
+.ticket::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 50%;
+  right: -20px;
+  background-color: #f3f5f7;
+}
+
+.ticket-background {
+  background-color: #8a74f9;
+}
+
+.trash {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+}
+
+.qr-code {
+  margin-top: px !important;
+  border-top: 5px dashed hsla(0, 0%, 100%, 0.4);
+}
+
+.ticket-link {
+  font-family: "Inter", sans-serif;
+  background-color: white;
+}
+
+.share-btn {
+  border: 2px solid white;
+  margin-top: 15px;
+}

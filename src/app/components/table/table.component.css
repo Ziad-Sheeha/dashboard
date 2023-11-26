@@ -1,0 +1,75 @@
+.btn-purple {
+  background-color: #8a74f9;
+}
+::placeholder {
+  text-align: right;
+}
+.input-group-text {
+  background-color: white;
+}
+::ng-deep .p-inputswitch-checked {
+  float: right !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.add-space-between-rows .p-datatable .p-datatable-tbody tr {
+  margin-top: 10px;
+}
+
+:host /deep/ .p-datatable .p-paginator-pages {
+  justify-content: flex-start !important;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:first-child {
+  background-color: #8a74f9;
+  color: #fff;
+  border-radius: 4px;
+
+  margin: 0 4px;
+}
+
+/* Align the paginator to the right */
+:host ::ng-deep .p-paginator {
+  text-align: right;
+}
+
+/* Reverse the order of the page numbers */
+:host ::ng-deep .p-paginator .p-paginator-pages {
+  display: flex;
+  flex-direction: row-reverse;
+}
+th {
+  background-color: #f7f7f7;
+  padding: 11px;
+  color: #abaab1;
+}
+
+tr {
+  border-radius: 20px;
+  height: 3rem;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+:host ::ng-deep .p-paginator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+:host ::ng-deep .p-paginator {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages,
+:host ::ng-deep .p-paginator .p-paginator-current,
+:host ::ng-deep .p-paginator .p-paginator-element {
+  margin-left: auto;
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+}

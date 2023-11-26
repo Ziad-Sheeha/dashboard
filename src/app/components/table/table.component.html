@@ -1,0 +1,135 @@
+<div
+  class="table-header mt-3 mt-md-0 row justify-content-between flex-wrap align-items-center"
+>
+  <div class="left-side col-12 col-md-5 d-flex align-items-baseline gap-3">
+    <button class="btn btn-purple color-white">حجز تذكرة جديدة</button>
+    <div class="d-flex gap-2">
+      <span> {{ checked ? "مفعلة" : "غير مفعلة" }}</span>
+      <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+    </div>
+  </div>
+  <div
+    class="right-side col-12 col-md-7 mt-2 mt-md-0 d-flex justify-content-between align-items-baseline gap-1"
+  >
+    <div class="filter-1 btn bg-white box-shadow">
+      <img src="../../../assets/imgs/Group 1000009748.svg" alt="" />
+    </div>
+    <div class="filter-2 btn bg-white box-shadow">
+      <img src="../../../assets/imgs/Group 1000009749.svg" alt="" />
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1"
+        ><img src="../../../assets/imgs/search-normal.svg" alt=""
+      /></span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+      <p class="mt-2 mx-2 searchLable">مبيعات التذاكر</p>
+    </div>
+  </div>
+</div>
+<!-- !---------------------------- -->
+
+<div class="card">
+  <!-- #dt1
+    [value]="customers"
+    dataKey="id"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="[
+      'name',
+      'country.name',
+      'representative.name',
+      'status'
+    ]" -->
+  <p-table
+    [showFirstLastIcon]="false"
+    [showCurrentPageReport]="true"
+    [paginatorStyleClass]="'custom-paginator-style'"
+    [pageLinks]="5"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    class="center-text add-space-between-rows"
+    [value]="customers"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    dataKey="id"
+    [rows]="4"
+    [paginator]="true"
+    currentPageReportTemplate="عرض {first} من {totalRecords} "
+  >
+    <ng-template pTemplate="header">
+      <tr class="head">
+        <th>التذكرة</th>
+        <th>عدد مرات الشراء</th>
+        <th>عدد الأشخاص</th>
+        <th>السينيمات</th>
+        <th>
+          <i style="color: #292d32" class="pi pi-sort-alt"></i>&nbsp;قيمتي
+          التذكرة
+        </th>
+        <th>رقم التذكرة</th>
+        <th>المستخدم</th>
+        <th>#</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+      <tr class="mt-2">
+        <td class="center-text" pEditableColumn>
+          <div
+            class="files d-flex justify-content-center align-items-center gap-4"
+          >
+            <div class="download m-0">
+              <img [src]="customer.files.download" alt="" />
+            </div>
+            <div class="text">
+              <h6 class="fw-bold m-0">{{ customer.files.fileName }}</h6>
+              <p style="font-size: 10px" class="m-0 text-end">
+                {{ customer.files.fileSize }}
+              </p>
+            </div>
+            <div class="trash">
+              <img [src]="customer.files.trash" alt="" />
+            </div>
+          </div>
+        </td>
+        <td class="center-text">
+          {{ customer.purshaseNum }}
+        </td>
+        <td class="center-text">
+          {{ customer.personsNum }}
+        </td>
+        <td class="center-text fw-medium">
+          {{ customer.Cenimas1 }}
+        </td>
+        <td class="center-text">
+          {{ customer.ticketCost }}
+        </td>
+        <td class="center-text">
+          {{ customer.ticketNum }}
+        </td>
+        <td class="center-text">
+          <div class="user d-flex align-items-center gap-2">
+            <div class="userinfo text-end">
+              <h6 class="fw-bold p-0 m-0">{{ customer.user.username }}</h6>
+              <p style="font-size: 10px" class="m-0 text-secondary">
+                {{ customer.user.userPhone }}
+              </p>
+            </div>
+            <div class="userImage">
+              <img class="" [src]="customer.user.userImage" />
+            </div>
+          </div>
+        </td>
+        <td class="center-text">
+          {{ customer.code }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
